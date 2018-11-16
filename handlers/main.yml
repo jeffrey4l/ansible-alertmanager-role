@@ -1,0 +1,13 @@
+---
+- name: check configure files
+  command: "{{ alertmanager_bin_path }}/amtool check-config {{ alertmanager_etc_path }}/alertmanager.yml"
+
+- name: restart alertmanager service
+  systemd: name=alertmanager state=restarted daemon_reload=yes
+  check_mode: true
+  ignore_errors: "{{ ignore_systemd_error }}"
+
+- name: reload alertmanager service
+  systemd: name=alertmanager state=reloaded
+  check_mode: true
+  ignore_errors: "{{ ignore_systemd_error }}"

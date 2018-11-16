@@ -1,0 +1,24 @@
+---
+- name: ensure folder
+  file:
+    path: "{{ alertmanager_bin_path }}"
+    state: directory
+
+- name: Download alertmanager packages
+  get_url:
+    url: "{{ alertmanager_download_url }}"
+    dest: /tmp/{{ alertmanager_filename }}
+    checksum: "{{ alertmanager_checksum }}"
+  register: download_alertmanager
+
+- name: unpack the package
+  unarchive:
+    src: /tmp/{{ alertmanager_filename }}
+    dest: /opt/alertmanager
+    owner: root
+    group: root
+    remote_src: true
+    extra_opts:
+      - --strip-components=1
+  when:
+    - download_alertmanager is changed

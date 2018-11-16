@@ -1,0 +1,29 @@
+---
+galaxy_info:
+  author: jeffrey4l
+  description: Ansible role to install prometheus server.
+  company: your company (optional)
+  role_name: alertmanager
+
+  license: GPLv3
+
+  min_ansible_version: 2.4
+
+  github_branch: master
+  platforms:
+    - name: CentOS
+      versions:
+        - 7
+    - name: Ubuntu
+      versions:
+        - 16.04
+        - 18.04
+  galaxy_tags:
+    - alertmanager
+    - alerting
+    - metrics
+    - molecule
+    - monitoring
+    - prometheus
+
+dependencies: []

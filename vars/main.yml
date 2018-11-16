@@ -1,0 +1,10 @@
+---
+go_arch_map:
+  i386: '386'
+  x86_64: 'amd64'
+  aarch64: 'arm64'
+  armv7l: 'armv7'
+  armv6l: 'armv6'
+
+alertmanager_checksums:
+  0.15.3: "{{ lookup('file', role_path ~ '/vars/versions/0.15.3.sha256sums.yml')|from_yaml }}"

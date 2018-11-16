@@ -1,0 +1,50 @@
+---
+- name: ensure etc folder
+  file:
+    path: "{{ item }}"
+    recurse: true
+    state: directory
+  with_items:
+    - "{{ alertmanager_etc_path }}"
+    - "{{ alertmanager_etc_path }}/rules"
+
+- name: ensure data folder
+  file:
+    path: "{{ alertmanager_data_path }}"
+    recurse: true
+    state: directory
+    owner: "{{ alertmanager_runas_user }}"
+    group: "{{ alertmanager_runas_user }}"
+
+- name: copy alertmanager.yml file
+  vars:
+    filename: alertmanager.yml
+  template:
+    src: "{{ item }}"
+    dest: "{{ alertmanager_etc_path }}/{{ filename }}"
+  with_first_found:
+    - files:
+        - "{{ filename }}.j2"
+      paths:
+        - "{{ playbook_dir }}/templates/"
+        - "{{ playbook_dir }}/templates/{{ role_name }}"
+        - "{{ role_path }}/templates"
+  notify:
+    - check configure files
+    - reload alertmanager service
+
+- name: copy alertmanager.service
+  vars:
+    filename: alertmanager.service
+  template:
+    src: "{{ item }}"
+    dest: /etc/systemd/system/alertmanager.service
+  with_first_found:
+    - files:
+        - "{{ filename }}.j2"
+      paths:
+        - "{{ playbook_dir }}/templates/"
+        - "{{ playbook_dir }}/templates/{{ role_name }}"
+        - "{{ role_path }}/templates"
+  notify:
+    - restart alertmanager service
