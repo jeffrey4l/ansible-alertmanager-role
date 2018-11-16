@@ -12,6 +12,7 @@ galaxy_info:
   github_branch: master
   platforms:
     - name: EL
+      versions:
         - 7
     - name: Ubuntu
       versions:
