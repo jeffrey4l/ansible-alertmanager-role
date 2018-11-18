@@ -2,6 +2,9 @@
 dist: xenial
 language: python
 sudo: required
+env:
+  - SCENARIO=lxc
+  - SCENARIO=lxc-cluster
 script:
   # check https://github.com/travis-ci/travis-ci/issues/1350
   - sudo sed -i '/^Defaults\tsecure_path.*$/d' /etc/sudoers
@@ -9,4 +12,4 @@ script:
   - sudo apt-get install -y lxc lxc-templates debootstrap lxc-dev
   - pip install ansible
   - pip install -r test-requirements.txt
-  - sudo -E molecule test -s lxc
+  - sudo -E molecule test -s $SCENARIO
