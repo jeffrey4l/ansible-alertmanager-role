@@ -13,7 +13,7 @@ platforms:
       --release 7
       --arch amd64
     container_command: |
-      until ping -c1 baidu.com &>/dev/null; do :; done
+      until ping -c1 8.8.8.8 &>/dev/null; do :; done
     groups:
       - alertmanager
   - name: centos7-node2
@@ -23,7 +23,7 @@ platforms:
       --release 7
       --arch amd64
     container_command: |
-      until ping -c1 baidu.com &>/dev/null; do :; done
+      until ping -c1 8.8.8.8 &>/dev/null; do :; done
     groups:
       - alertmanager
 provisioner:
