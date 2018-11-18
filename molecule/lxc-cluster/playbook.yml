@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: install alertmanager
+      vars:
+        alertmanager_enable_cluster: true
+      import_role:
+        name: ansible-alertmanager-role

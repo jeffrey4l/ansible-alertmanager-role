@@ -24,3 +24,14 @@ alertmanager_download_url: >-
 
 # Use for molecule unittest
 ignore_systemd_error: false
+
+alertmanager_extra_flags: ""
+alertmanager_enable_cluster: false
+
+alertmanager_web_interface: eth0
+alertmanager_cluster_interface: "{{ alertmanager_web_interface }}"
+
+alertmanager_web_listen: "0.0.0.0"
+alertmanager_web_port: 9093
+alertmanager_cluster_listen: "{{ hostvars[inventory_hostname]['ansible_' ~ alertmanager_cluster_interface]['ipv4']['address'] }}"
+alertmanager_cluster_port: 9094

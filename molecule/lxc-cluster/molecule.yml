@@ -1,0 +1,38 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: lxc
+lint:
+  name: yamllint
+platforms:
+  - name: centos7-node1
+    template: download
+    template_options: >-
+      --dist centos
+      --release 7
+      --arch amd64
+    container_command: |
+      until ping -c1 baidu.com &>/dev/null; do :; done
+    groups:
+      - alertmanager
+  - name: centos7-node2
+    template: download
+    template_options: >-
+      --dist centos
+      --release 7
+      --arch amd64
+    container_command: |
+      until ping -c1 baidu.com &>/dev/null; do :; done
+    groups:
+      - alertmanager
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: lxc-cluster
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

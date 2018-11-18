@@ -47,4 +47,5 @@
         - "{{ playbook_dir }}/templates/{{ role_name }}"
         - "{{ role_path }}/templates"
   notify:
+    - systemd daemon reload
     - restart alertmanager service
