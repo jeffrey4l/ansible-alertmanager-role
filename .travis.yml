@@ -13,3 +13,4 @@ script:
   - pip install ansible
   - pip install -r test-requirements.txt
   - sudo -E molecule test -s $SCENARIO
+cache: pip
