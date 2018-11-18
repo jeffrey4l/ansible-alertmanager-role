@@ -3,7 +3,7 @@ dist: xenial
 language: python
 sudo: required
 env:
-  #- SCENARIO=lxc
+  - SCENARIO=lxc
   - SCENARIO=lxc-cluster
 script:
   # check https://github.com/travis-ci/travis-ci/issues/1350
