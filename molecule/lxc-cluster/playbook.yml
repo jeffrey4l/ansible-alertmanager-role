@@ -7,3 +7,13 @@
         alertmanager_enable_cluster: true
       import_role:
         name: ansible-alertmanager-role
+  post_tasks:
+    - name: check alertmanager cluster status
+      uri:
+        url: "http://{{ ansible_eth0.ipv4.address }}:9093/api/v1/status"
+      register: check_alertmanager
+      retries: 20
+      delay: 3
+      until:
+        - check_alertmanager.status == 200
+        - check_alertmanager.json.data.clusterStatus.peers | length == groups['alertmanager'] | length
