@@ -13,5 +13,7 @@ script:
   - sudo apt-get install -y lxc debootstrap lxc-dev
   - pip install ansible
   - pip install -r test-requirements.txt
-  - sudo -E molecule test -s $SCENARIO
+  - sudo -E molecule test -s $SCENARIO --destroy never
 cache: pip
+after_script:
+  - sudo ansible -i localhost, -c local all -m setup
