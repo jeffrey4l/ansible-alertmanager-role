@@ -3,21 +3,8 @@ Description=Alertmanager service
 
 [Service]
 Type=simple
-ExecStart={{ alertmanager_bin_path }}/alertmanager \
-    --web.listen-address={{ alertmanager_web_listen }}:{{ alertmanager_web_port }} \
-{% if alertmanager_enable_cluster and groups.get('alertmanager') and groups['alertmanager']|length > 1 %}
-    --cluster.listen-address={{ alertmanager_cluster_listen }}:{{ alertmanager_cluster_port }} \
-{% for peer in groups['alertmanager'] %}
-{% set peer_cluster_listen=
-    hostvars[peer]['ansible_' ~ hostvars[peer].get('alertmanager_cluster_interface', alertmanager_cluster_interface)].ipv4.address %}
-    --cluster.peer={{ peer_cluster_listen }}:{{ hostvars[peer].get('alertmanager_cluster_port', alertmanager_cluster_port) }} \
-{% endfor %}
-{% endif %}
-{% if alertmanager_extra_flags %}
-    {{ alertmanager_extra_flags }} \
-{% endif %}
-    --config.file={{ alertmanager_etc_path }}/alertmanager.yml \
-    --storage.path={{ alertmanager_data_path }}
+EnvironmentFile=/etc/default/alertmanager
+ExecStart={{ alertmanager_bin_path }}/alertmanager $ARGS
 ExecReload=/bin/kill -HUP $MAINPID
 
 [Install]

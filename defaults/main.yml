@@ -25,7 +25,6 @@ alertmanager_download_url: >-
 # Use for molecule unittest
 ignore_systemd_error: false
 
-alertmanager_extra_flags: ""
 alertmanager_enable_cluster: false
 
 alertmanager_web_interface: eth0
@@ -35,3 +34,16 @@ alertmanager_web_listen: "0.0.0.0"
 alertmanager_web_port: 9093
 alertmanager_cluster_listen: "{{ hostvars[inventory_hostname]['ansible_' ~ alertmanager_cluster_interface]['ipv4']['address'] }}"
 alertmanager_cluster_port: 9094
+
+alertmanager_args: >-
+    --web.listen-address={{ alertmanager_web_listen }}:{{ alertmanager_web_port }}
+    {% if alertmanager_enable_cluster and groups.get('alertmanager') and groups['alertmanager']|length > 1 %}
+    --cluster.listen-address={{ alertmanager_cluster_listen }}:{{ alertmanager_cluster_port }}
+    {% for peer in groups['alertmanager'] %}
+    {% set peer_cluster_listen=
+    hostvars[peer]['ansible_' ~ hostvars[peer].get('alertmanager_cluster_interface', alertmanager_cluster_interface)].ipv4.address %}
+    --cluster.peer={{ peer_cluster_listen }}:{{ hostvars[peer].get('alertmanager_cluster_port', alertmanager_cluster_port) }}
+    {% endfor %}
+    {% endif %}
+    --config.file={{ alertmanager_etc_path }}/alertmanager.yml
+    --storage.path={{ alertmanager_data_path }}
