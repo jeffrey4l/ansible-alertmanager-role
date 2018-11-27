@@ -2,7 +2,6 @@
 galaxy_info:
   author: jeffrey4l
   description: Ansible role to install prometheus server.
-  company: your company (optional)
   role_name: alertmanager
 
   license: GPLv3
