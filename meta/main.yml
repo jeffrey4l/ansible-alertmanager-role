@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   author: jeffrey4l
+  company: jeffrey4l
   description: Ansible role to install prometheus server.
   role_name: alertmanager
 
