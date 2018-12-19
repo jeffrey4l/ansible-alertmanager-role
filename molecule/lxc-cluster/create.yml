@@ -12,6 +12,8 @@
         state: started
         template_options: "{{ item.template_options }}"
         container_command: "{{ item.container_command }}"
+        container_log: true
+        container_log_level: DEBUG
       with_items: "{{ molecule_yml.platforms }}"
       register: create_instance
       retries: 10
