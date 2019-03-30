@@ -1,3 +1,4 @@
+---
 alertmanager-0.15.3.darwin-386.tar.gz: sha256:b10ca070519305b76b9294623d07ca1b915d8ab3b1e9515406ea493c069b7ddd
 alertmanager-0.15.3.darwin-amd64.tar.gz: sha256:eff57309465d20a543f5db3ef566bec14ea384da0d6c7cbe1280fff0c24f94cd
 alertmanager-0.15.3.dragonfly-amd64.tar.gz: sha256:c0e5f7b3ad62da1d5dd31b3d141dc7a3794b7ca398cbe1706a9ff2619847513d

@@ -5,7 +5,7 @@ alertmanager_data_path: /var/lib/alertmanager
 
 alertmanager_runas_user: root
 
-alertmanager_version_latest: 0.15.3
+alertmanager_version_latest: 0.16.1
 
 # Vaild options: [
 #   0.15.3,
@@ -20,7 +20,7 @@ alertmanager_filename: >-
   alertmanager-{{ alertmanager_version }}.{{ alertmanager_os }}-{{ go_arch_map[alertmanager_arch] }}.tar.gz
 alertmanager_checksum: "{{ alertmanager_checksums[alertmanager_version][alertmanager_filename] }}"
 alertmanager_download_url: >-
-  https://github.com/prometheus/alertmanager/releases/download/v0.15.3/alertmanager-0.15.3.linux-amd64.tar.gz
+  https://github.com/prometheus/alertmanager/releases/download/v{{ alertmanager_version }}/{{ alertmanager_filename }}
 
 # Use for molecule unittest
 ignore_systemd_error: false

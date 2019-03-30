@@ -7,4 +7,15 @@ go_arch_map:
   armv6l: 'armv6'
 
 alertmanager_checksums:
+  0.10.0: "{{ lookup('file', role_path ~ '/vars/versions/0.10.0.sha256sums.yml')|from_yaml }}"
+  0.11.0: "{{ lookup('file', role_path ~ '/vars/versions/0.11.0.sha256sums.yml')|from_yaml }}"
+  0.12.0: "{{ lookup('file', role_path ~ '/vars/versions/0.12.0.sha256sums.yml')|from_yaml }}"
+  0.13.0: "{{ lookup('file', role_path ~ '/vars/versions/0.13.0.sha256sums.yml')|from_yaml }}"
+  0.14.0: "{{ lookup('file', role_path ~ '/vars/versions/0.14.0.sha256sums.yml')|from_yaml }}"
+  0.15.0: "{{ lookup('file', role_path ~ '/vars/versions/0.15.0.sha256sums.yml')|from_yaml }}"
+  0.15.1: "{{ lookup('file', role_path ~ '/vars/versions/0.15.1.sha256sums.yml')|from_yaml }}"
+  0.15.2: "{{ lookup('file', role_path ~ '/vars/versions/0.15.2.sha256sums.yml')|from_yaml }}"
   0.15.3: "{{ lookup('file', role_path ~ '/vars/versions/0.15.3.sha256sums.yml')|from_yaml }}"
+  0.16.0: "{{ lookup('file', role_path ~ '/vars/versions/0.16.0.sha256sums.yml')|from_yaml }}"
+  0.16.1: "{{ lookup('file', role_path ~ '/vars/versions/0.16.1.sha256sums.yml')|from_yaml }}"
+  0.16.2: "{{ lookup('file', role_path ~ '/vars/versions/0.16.2.sha256sums.yml')|from_yaml }}"

@@ -22,3 +22,5 @@
       - --strip-components=1
   when:
     - download_alertmanager is changed
+  notify:
+    - restart alertmanager service

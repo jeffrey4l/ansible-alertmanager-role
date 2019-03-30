@@ -1,0 +1,26 @@
+---
+alertmanager-0.10.0.darwin-386.tar.gz: sha256:6f277d4d4a6a18dbe0043fc4e455a9086dc0bd89b3c503f315d4248794204e87
+alertmanager-0.10.0.darwin-amd64.tar.gz: sha256:aedb14a7bcd1a06ec7d3c506a9d2176e29930fc5a5b79650a81d8e10159af489
+alertmanager-0.10.0.dragonfly-amd64.tar.gz: sha256:909783a57b03265888da04f0aed283f0791085c95665b8a29deb73a5718b6705
+alertmanager-0.10.0.freebsd-386.tar.gz: sha256:b63c9eb0aa2e2fe2f97ece69a23ce6786efd39827bd99fbe0420922510bbec62
+alertmanager-0.10.0.freebsd-amd64.tar.gz: sha256:42d6e288038642d3c68c9bc234223fe35174b411a023a8d1dff99b2427faa99d
+alertmanager-0.10.0.freebsd-armv6.tar.gz: sha256:d91be1e800c6ec4f7f6576cea1853412aff0d613b52c1f46bc6060f095176b23
+alertmanager-0.10.0.freebsd-armv7.tar.gz: sha256:ffb99c13109b3ab08111ec6432fc22cdd8b76c9e1c109d9edca83bfbdfb5bb5c
+alertmanager-0.10.0.linux-386.tar.gz: sha256:80080e4094f4ce59e5fd95ed60198710d5282bd5f498fc916380aab4485ade44
+alertmanager-0.10.0.linux-amd64.tar.gz: sha256:ef09b9c9795a7148fd74bb1dcecdd00a4fa25da05a4d2b8517e6ceb5f124e1a8
+alertmanager-0.10.0.linux-arm64.tar.gz: sha256:92a19dc068240f4277eef0d2ee252c2f571e4498c531a2d9c5634ee9a3d57d0a
+alertmanager-0.10.0.linux-armv5.tar.gz: sha256:6ea09de9a0ef85d1042d121c48fb7f88218c57bceed43dfbdb9310af8e256163
+alertmanager-0.10.0.linux-armv6.tar.gz: sha256:b7634029043eebaffff22e20cfecfc13e6d95a70e9f9fe6847788d868cc253b9
+alertmanager-0.10.0.linux-armv7.tar.gz: sha256:feec4aca4d666fe83e0af6cfc49e1b84b42bf0e18f25f2c34f9524dd5f3a529f
+alertmanager-0.10.0.linux-mips64.tar.gz: sha256:4fa8d4c61609d4351f284136eae734a9293b97e053ce00988d460ec19768837f
+alertmanager-0.10.0.linux-mips64le.tar.gz: sha256:7d32dd9afcf4eaefe3e5b2b5544164e93a3f61bf911c9d1bca428b54385b027f
+alertmanager-0.10.0.linux-ppc64.tar.gz: sha256:80b112661d51eb7d4a768c20a61382a3499700e21498190a9115e82b413e3d3c
+alertmanager-0.10.0.linux-ppc64le.tar.gz: sha256:21006850502101f736f7e546f5b67293e3e98cf6de31d823f8a00746729636c6
+alertmanager-0.10.0.netbsd-386.tar.gz: sha256:364e79ce6c77445935a7a96ced429008a84b50a353f8f7fc235625d459145a17
+alertmanager-0.10.0.netbsd-amd64.tar.gz: sha256:9c007677026782cf3be7c6421217db61ae6794d890ffc357a6b4042ce313c2ef
+alertmanager-0.10.0.netbsd-armv6.tar.gz: sha256:1195f5ef5392ec51a7d07acffecab1ce254e43589605b465a5efeadee463bdc4
+alertmanager-0.10.0.netbsd-armv7.tar.gz: sha256:623ec6a0becb845056753d7828aee1108240be6c2a524258596cf9f49df003dc
+alertmanager-0.10.0.openbsd-386.tar.gz: sha256:6050fafa73037b35dea31c54113282a9375447384d87011fc42bf9d2febe5a05
+alertmanager-0.10.0.openbsd-amd64.tar.gz: sha256:e02927968f16a592853cd057f07a05c9b56ef8c9e0957485abcb0071bfe7b715
+alertmanager-0.10.0.windows-386.tar.gz: sha256:f005aaf38cdffcf777d485bfbc1736509680bcb9b11d610daec06a37754357d8
+alertmanager-0.10.0.windows-amd64.tar.gz: sha256:29c3ec5cee7f49b7255a5dcbf5117bc0027949d1c5af486610880ad75668682c
