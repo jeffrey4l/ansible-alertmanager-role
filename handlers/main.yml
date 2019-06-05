@@ -1,5 +1,5 @@
 ---
-- name: check configure files
+- name: check alertmanager configure files
   command: "{{ alertmanager_bin_path }}/amtool check-config {{ alertmanager_etc_path }}/alertmanager.yml"
 
 - name: systemd daemon reload

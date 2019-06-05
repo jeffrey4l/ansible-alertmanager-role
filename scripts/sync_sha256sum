@@ -10,22 +10,23 @@ PROJECT_ROOT=$(dirname ${CUR_DIR})
 tags=$(curl https://api.github.com/repos/prometheus/prometheus/git/refs/tags | jq -r '.[].ref|split("/")[2]')
 
 VERSIONS=(
-    v0.10.0
-    v0.11.0
-    v0.12.0
-    v0.13.0
-    v0.14.0
-    v0.15.0
-    v0.15.1
-    v0.15.2
-    v0.15.3
-    v0.16.0
-    v0.16.1
-    v0.16.2
+    0.10.0
+    0.11.0
+    0.12.0
+    0.13.0
+    0.14.0
+    0.15.0
+    0.15.1
+    0.15.2
+    0.15.3
+    0.16.0
+    0.16.1
+    0.16.2
+    0.17.0
     )
 
 for version in ${VERSIONS[@]}; do
     dest=${PROJECT_ROOT}/vars/versions/$version.sha256sums.yml
     echo --- > $dest
-    curl -L $BASE_URL/${version}/sha256sums.txt | sed -r 's/(\S+)\s+(\S+)/\2: sha256:\1/' >> $dest
+    curl -L $BASE_URL/v${version}/sha256sums.txt | sed -r 's/(\S+)\s+(\S+)/\2: sha256:\1/' >> $dest
 done

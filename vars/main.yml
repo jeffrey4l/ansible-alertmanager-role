@@ -19,3 +19,4 @@ alertmanager_checksums:
   0.16.0: "{{ lookup('file', role_path ~ '/vars/versions/0.16.0.sha256sums.yml')|from_yaml }}"
   0.16.1: "{{ lookup('file', role_path ~ '/vars/versions/0.16.1.sha256sums.yml')|from_yaml }}"
   0.16.2: "{{ lookup('file', role_path ~ '/vars/versions/0.16.2.sha256sums.yml')|from_yaml }}"
+  0.17.0: "{{ lookup('file', role_path ~ '/vars/versions/0.17.0.sha256sums.yml')|from_yaml }}"
