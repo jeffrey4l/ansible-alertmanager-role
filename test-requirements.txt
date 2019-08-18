@@ -1,5 +1,6 @@
-molecule
-flake8
 docker
-lxc-python2
+flake8
+git+https://github.com/lxc/python3-lxc.git#egg=python3-lxc; python_version=='3.6'
+lxc-python2; python_version=='2.7'
+molecule
 pytest<3.10.0
