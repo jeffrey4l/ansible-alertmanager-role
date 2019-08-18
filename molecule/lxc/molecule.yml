@@ -13,7 +13,8 @@ platforms:
       --release 7
       --arch amd64
     container_command: |
-      until ping -c1 8.8.8.8 &>/dev/null; do :; done
+      set -xe
+      until ping -c1 www.google.com &>/dev/null; do :; done
   - name: ubuntu-xenial
     template: download
     template_options: >-
@@ -21,7 +22,8 @@ platforms:
       --release xenial
       --arch amd64
     container_command: |
-      until ping -c1 8.8.8.8 &>/dev/null; do :; done
+      set -xe
+      until ping -c1 www.google.com &>/dev/null; do :; done
       apt update
       apt install -y python-minimal
   - name: ubuntu-bionic
@@ -31,7 +33,8 @@ platforms:
       --release bionic
       --arch amd64
     container_command: |
-      until ping -c1 8.8.8.8 &>/dev/null; do :; done
+      set -xe
+      until ping -c1 www.google.com &>/dev/null; do :; done
       apt update
       apt install -y python-minimal
 provisioner:

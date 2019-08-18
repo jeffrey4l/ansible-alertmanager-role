@@ -13,6 +13,7 @@ platforms:
       --release 7
       --arch amd64
     container_command: |
+      set -xe
       until ping -c1 8.8.8.8 &>/dev/null; do :; done
     groups:
       - alertmanager
@@ -23,6 +24,7 @@ platforms:
       --release 7
       --arch amd64
     container_command: |
+      set -xe
       until ping -c1 8.8.8.8 &>/dev/null; do :; done
     groups:
       - alertmanager

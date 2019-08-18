@@ -1,6 +1,7 @@
 ---
 dist: xenial
 language: python
+python: 3.6
 sudo: required
 env:
   - SCENARIO=lxc
@@ -14,6 +15,9 @@ script:
   - pip install ansible
   - pip install -r test-requirements.txt
   - sudo -E molecule test -s $SCENARIO
+after_script:
+  - ls -alh ~/
+  - sudo ls -alh /var/log/lxc
 cache: pip
 
 notifications:
